@@ -1,4 +1,5 @@
 import { supabase } from "../supabase";
+import { sendPushNotification } from "./push.service";
 
 // Calcula distância entre dois pontos GPS em metros (fórmula de Haversine)
 export function calculateDistance(
