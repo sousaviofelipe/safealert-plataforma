@@ -6,6 +6,7 @@ import victimsRoutes from "./routes/victims.routes";
 import offendersRoutes from "./routes/offenders.routes";
 import locationsRoutes from "./routes/locations.routes";
 import alertsRoutes from "./routes/alerts.routes";
+import messagesRoutes from "./routes/messages.routes";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -25,6 +26,7 @@ app.use("/victims", victimsRoutes);
 app.use("/offenders", offendersRoutes);
 app.use("/locations", locationsRoutes);
 app.use("/alerts", alertsRoutes);
+app.use("/messages", messagesRoutes);
 
 app.listen(PORT, () => {
   console.log(`SafeAlert backend rodando na porta ${PORT}`);
