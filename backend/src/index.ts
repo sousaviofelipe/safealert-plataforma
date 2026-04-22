@@ -1,3 +1,4 @@
+import configRoutes from "./routes/config.routes";
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
@@ -7,6 +8,7 @@ import offendersRoutes from "./routes/offenders.routes";
 import locationsRoutes from "./routes/locations.routes";
 import alertsRoutes from "./routes/alerts.routes";
 import messagesRoutes from "./routes/messages.routes";
+import victimsAuthRoutes from "./routes/victims.auth.routes";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -21,6 +23,8 @@ app.get("/health", (req, res) => {
 });
 
 // Rotas
+app.use("/victims-auth", victimsAuthRoutes);
+app.use("/config", configRoutes);
 app.use("/cases", casesRoutes);
 app.use("/victims", victimsRoutes);
 app.use("/offenders", offendersRoutes);
