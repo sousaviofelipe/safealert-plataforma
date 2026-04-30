@@ -8,8 +8,6 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@safealert/types": "*",
-    "@safealert/utils": "*",
     "@supabase/supabase-js": "^2.103.2",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",

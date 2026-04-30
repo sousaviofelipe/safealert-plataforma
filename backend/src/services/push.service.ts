@@ -4,9 +4,14 @@ import { join } from "path";
 
 // Inicializa o Firebase Admin SDK uma única vez
 if (!admin.apps.length) {
-  const serviceAccount = JSON.parse(
-    readFileSync(join(__dirname, "../firebase-service-account.json"), "utf8"),
-  );
+  const serviceAccount = process.env.FIREBASE_SERVICE_ACCOUNT
+    ? JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT)
+    : JSON.parse(
+        readFileSync(
+          join(__dirname, "../firebase-service-account.json"),
+          "utf8",
+        ),
+      );
 
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
