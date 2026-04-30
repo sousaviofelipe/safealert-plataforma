@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd apps/web && npm install --no-workspaces && npx next build",
+  "outputDirectory": "apps/web/.next",
+  "installCommand": "echo skip"
+}
